@@ -1,0 +1,14 @@
+.header {
+  position: sticky;
+  left: 0;
+  top: 0;
+  z-index: 200;
+}
+
+.p-menubar {
+  padding: 20px;
+  background: rgba(18, 18, 18, 0.31);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.7px);
+  -webkit-backdrop-filter: blur(5.7px);
+}

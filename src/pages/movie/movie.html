@@ -1,0 +1,11 @@
+<div class="movie">
+  <div class="container">
+    @if (movie()?.nameRu) {
+      <div class="movie__title">{{movie()?.nameRu}}</div>
+    } @else if (movie()?.nameEn) {
+      <div class="movie__title">{{movie()?.nameEn}}</div>
+    } @else {
+      <div class="movie__title">{{movie()?.nameOriginal}}</div>
+    }
+  </div>
+</div>
