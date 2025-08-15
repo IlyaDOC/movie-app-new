@@ -1,3 +1,5 @@
 <a routerLink='movies/{{movie().kinopoiskId}}' class="movie-card">
-  <img [src]="movie().posterUrlPreview" [alt]="movie().nameRu" class="movie-card__image">
+  <div class="movie-card__image">
+    <img [src]="movie().posterUrlPreview" [alt]="movie().nameRu" >
+  </div>
 </a>

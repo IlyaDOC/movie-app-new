@@ -1,0 +1,18 @@
+.movie {
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 30px;
+  }
+  &__title {
+    &_original {
+      margin-top: 30px;
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
+
+  &__description {
+    margin-top: 20px;
+  }
+}

@@ -1,10 +1,15 @@
-.home__collection-title {
+.home__collection-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: 40px;
 }
-
 .home__collection__items {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  grid-auto-rows: 600px;
+  width: 100%;
+
+  .swiper-slide {
+    height: 600px;
+  }
 }
+
+

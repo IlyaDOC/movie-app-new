@@ -7,6 +7,7 @@ import {
   isDevMode
 } from '@angular/core';
 import {provideRouter} from '@angular/router';
+import {provideClientHydration} from '@angular/platform-browser';
 
 import {routes} from './app.routes';
 import {provideAnimationsAsync} from '@angular/platform-browser/animations/async';
@@ -21,9 +22,16 @@ import {appReducers} from '../app.state';
 import {MoviesEffects} from '@shared/store/features/movies/movies.effects';
 import {MovieEffects} from '@shared/store/features/movie';
 
+import 'swiper/element';
+// import function to register Swiper custom elements
+import { register } from 'swiper/element/bundle';
+import {NewsEffects} from '@shared/store';
+// register Swiper custom elements
+register();
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    provideClientHydration(),
     provideAnimations(),
     provideBrowserGlobalErrorListeners(),
     provideZoneChangeDetection({eventCoalescing: true}),
@@ -39,7 +47,7 @@ export const appConfig: ApplicationConfig = {
       requestInterceptor,
     ])),
     provideStore(appReducers),
-    provideEffects([MoviesEffects, MovieEffects]),
+    provideEffects([MoviesEffects, MovieEffects, NewsEffects]),
     provideStoreDevtools({maxAge: 25, logOnly: !isDevMode()})
   ]
 };

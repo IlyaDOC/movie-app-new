@@ -8,7 +8,7 @@ import {environment} from '../../environments/environment.development';
 @Injectable({
   providedIn: 'root'
 })
-export class MoviesApi {
+export class MoviesAPI {
   private http: HttpClient = inject(HttpClient);
 
   getMoviesPremiers(year: number, month: string): Observable<MoviesPremiersListItemsType | ErrorResponseType> {

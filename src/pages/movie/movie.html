@@ -1,11 +1,25 @@
 <div class="movie">
   <div class="container">
-    @if (movie()?.nameRu) {
-      <div class="movie__title">{{movie()?.nameRu}}</div>
-    } @else if (movie()?.nameEn) {
-      <div class="movie__title">{{movie()?.nameEn}}</div>
-    } @else {
-      <div class="movie__title">{{movie()?.nameOriginal}}</div>
-    }
+    <div class="movie__inner">
+      <div class="movie__wrapper">
+        <div class="movie__media">
+          <div class="movie__poster">
+            <img [src]="movie()?.posterUrl" [alt]="movie()?.nameOriginal">
+          </div>
+        </div>
+        <div class="movie__main">
+
+          <div class="movie__title section-title">
+            {{ movie()?.nameRu || movie()?.nameEn || movie()?.nameOriginal }}
+          </div>
+
+          <div class="movie__title_original">
+            {{ movie()?.nameOriginal }}
+          </div>
+
+          <div class="movie__description">{{movie()?.description}}</div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

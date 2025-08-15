@@ -11,7 +11,6 @@ export interface MoviesPremiersState {
 export const moviesPremiersInitialState: MoviesPremiersState = {
   moviesPremiers: {
     total: 0,
-    totalPages: 0,
     items: []
   },
   loading: false,

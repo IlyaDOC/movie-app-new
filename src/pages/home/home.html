@@ -1,15 +1,30 @@
 <div class="home">
   <div class="container">
-    <div class="home__collection">
-      <div class="home__collection-title">
+    <section class="home__collection">
+      <div class="home__collection-top">
         <div class="home__collection-title section-title">Премьеры этого месяца</div>
-        <div class="home__collection__items">
-          @for (movie of moviesPremiers()?.items; track movie.kinopoiskId) {
-            <app-movie-card [movie]="movie"></app-movie-card>
-          }
-        </div>
       </div>
-    </div>
+      <div class="home__collection__items">
+        <swiper-container class="swiper-container"
+                          slides-per-view="4"
+                          space-between="20"
+                          navigation="true"
+        >
+          @for (movie of moviesPremiers()?.items; track movie.kinopoiskId) {
+            <swiper-slide class="swiper-slide">
+              <app-movie-card [movie]="movie"></app-movie-card>
+            </swiper-slide>
+          }
+        </swiper-container>
+      </div>
+    </section>
+    <section class="home__news">
+      <div class="home__news-title section-title">новости</div>
+      @for (item of news()?.items; track item.kinopoiskId) {
+        <app-news-card [newsItem]="item"></app-news-card>
+      }
+    </section>
   </div>
 </div>
+
 

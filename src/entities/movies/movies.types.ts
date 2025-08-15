@@ -1,6 +1,5 @@
 export type MoviesPremiersListItemsType = {
   total: number,
-  totalPages: number,
   items: MoviesPremiersItemType[]
 }
 
